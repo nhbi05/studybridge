@@ -1,6 +1,6 @@
-# MUK Study Bridge
+# Study Bridge
 
-**MUK Study Bridge** is an open-source platform for Makerere University students to access and share academic resources, interact with peers, and enhance their learning experience. This repository hosts the codebase for the project, with a focus on both backend and frontend development.
+**Study Bridge** is an open-source platform for University students to access and share academic resources, interact with peers, and enhance their learning experience. This repository hosts the codebase for the project, with a focus on both backend and frontend development.
 
 ---
 
@@ -18,7 +18,7 @@
 ---
 
 ## Project Overview
-MUK Study Bridge aims to:
+Study Bridge aims to:
 - Provide a centralized hub for sharing lecture notes, handouts, and past papers.
 - Offer interactive tutorials and tools for peer-to-peer learning.
 - Facilitate discussions and real-time group studies.
@@ -55,13 +55,13 @@ Follow these steps to set up the project on your local machine:
 ### Backend (Django):
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/muk-study-bridge.git
-   cd muk-study-bridge/backend
+   git clone https://github.com/nhbi05/studybridge.git
+   cd studybridge/backend
    ```
 2. Create and activate a virtual environment:
    ```bash
    python3 -m venv venv
-   source venv/bin/activate
+   source venv/Scripts/activate
    ```
 3. Install dependencies:
    ```bash
@@ -79,7 +79,7 @@ Follow these steps to set up the project on your local machine:
 ### Frontend (React):
 1. Navigate to the frontend folder:
    ```bash
-   cd muk-study-bridge/frontend
+   cd studybridge/frontend
    ```
 2. Install dependencies:
    ```bash
@@ -99,7 +99,7 @@ We welcome contributions to MUK Study Bridge! Here’s how to get started:
 1. **Fork** the repository.
 2. **Clone** the forked repo:
    ```bash
-   git clone https://github.com/yourusername/muk-study-bridge.git
+   git clone https://github.com/nhbi05/studybridge.git
    ```
 3. Create a new branch for your feature:
    ```bash
@@ -155,10 +155,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 For any questions or suggestions, feel free to reach out:
-- **Email**: yourname@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
+- **Email**: nhousnahishaq@gmail.com
+- **GitHub**: [nhbi05](https://github.com/nhbi05)
 
 ---
 
-Happy Contributing! 🚀
 
