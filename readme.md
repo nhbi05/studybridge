@@ -21,7 +21,7 @@
 
 ## Project Overview
 
-MUK Study Bridge aims to:
+Study Bridge aims to:
 
 - Provide a centralized hub for sharing lecture notes, handouts, and past papers.
 - Offer interactive tutorials and tools for peer-to-peer learning.
@@ -90,7 +90,7 @@ Follow these steps to set up the project on your local machine:
 
 1. Navigate to the frontend folder:
    ```bash
-   cd muk-study-bridge/frontend
+   cd studybridge/frontend
    ```
 2. Install dependencies:
    ```bash
@@ -111,8 +111,8 @@ Follow these steps to set up the project on your local machine:
    ```
 2. Create the necessary project directories:
    ```bash
-   mkdir muk-study-bridge
-   cd muk-study-bridge
+   mkdir studybridge
+   cd studybridge
    mkdir backend
    touch Dockerfile docker-compose.yml
    ```
@@ -139,7 +139,7 @@ Follow these steps to set up the project on your local machine:
    services:
      db:
        image: postgres:13
-       container_name: muk_db
+       container_name: studybridge_db
        volumes:
          - postgres_data:/var/lib/postgresql/data/
        environment:
@@ -151,7 +151,7 @@ Follow these steps to set up the project on your local machine:
 
      web:
        build: ./backend
-       container_name: muk_web
+       container_name: studybridge_web
        command: >
          sh -c "python manage.py migrate &&
                 python manage.py runserver 0.0.0.0:8000"
@@ -178,11 +178,11 @@ Follow these steps to set up the project on your local machine:
    ```
 6. Access the web container:
    ```bash
-   docker exec -it muk_web bash
+   docker exec -it studybridge_web bash
    ```
 7. Inside the container, initialize Django:
    ```bash
-   django-admin startproject muk_study_bridge .
+   django-admin startproject study_bridge .
    ```
 8. Modify `settings.py` to use PostgreSQL and apply migrations:
    ```bash
@@ -198,7 +198,7 @@ Follow these steps to set up the project on your local machine:
 
 ## Contribution Guidelines
 
-We welcome contributions to MUK Study Bridge! Here’s how to get started:
+We welcome contributions to Study Bridge! Here’s how to get started:
 
 1. **Fork** the repository.
 2. **Clone** the forked repo:
