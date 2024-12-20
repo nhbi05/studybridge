@@ -1,1 +1,48 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.sqlite3
+
+# Virtual Environment
+venv/
 env/
+
+# Django
+db.sqlite3
+/static/
+*.log
+*.pot
+*.py[cod]
+*.swp
+
+# Docker
+*.env
+.env
+docker-compose.override.yml
+
+# IDEs and Editors
+.vscode/
+
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Node.js (if the frontend uses React)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Coverage reports
+coverage/
+*.cover
+*.coverage
+.coverage.*
+*.egg-info/
+dist/
+build/
+
+# Misc
+*.bak
+*.tmp
