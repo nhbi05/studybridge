@@ -1,48 +1,69 @@
-# Python
-*.pyc
-*.pyo
+## Python
+*.py[cod]
 __pycache__/
-*.sqlite3
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
 
 # Virtual Environment
 venv/
 env/
+ENV/
+.env
 
 # Django
-db.sqlite3
-/static/
 *.log
 *.pot
-*.py[cod]
-*.swp
+*.pyc
+db.sqlite3
+media/
+static/
+local_settings.py
 
 # Docker
 *.env
-.env
 docker-compose.override.yml
 
-# IDEs and Editors
+# IDE and Editors
 .vscode/
-
+.idea/
+*.swp
+*.swo
+*~
 
 # System Files
 .DS_Store
 Thumbs.db
-
-# Node.js (if the frontend uses React)
-node_modules/
-npm-debug.log
-yarn-error.log
-
-# Coverage reports
-coverage/
-*.cover
-*.coverage
-.coverage.*
-*.egg-info/
-dist/
-build/
-
-# Misc
 *.bak
 *.tmp
+Desktop.ini
+
+# Node.js/Frontend
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.npm
+.yarn-integrity
+
+# Testing and Coverage
+coverage/
+.coverage
+.coverage.*
+.pytest_cache/
+htmlcov/
+.tox/
+
+# Misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
