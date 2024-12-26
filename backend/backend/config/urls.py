@@ -19,9 +19,5 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD:config/urls.py
-    path('api/', include('student_registrationapp.urls')), ]
-=======
-    #path('', include("studys_app.urls"))
+    path('', include("studys_app.urls"))
 ]
->>>>>>> f5fb31de76b91402ddfe6fd49eb6215b9ae0d471:backend/config/urls.py

@@ -22,8 +22,11 @@ COURSE_CHOICES = [
 ]
 
 class Student(AbstractUser):
+<<<<<<< HEAD:student_registrationapp/models.py
     name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
+=======
+>>>>>>> f5fb31de76b91402ddfe6fd49eb6215b9ae0d471:backend/student_registrationapp/models.py
     year_of_study = models.IntegerField(choices=YEAR_CHOICES,default=1)
     semester = models.IntegerField(choices=SEMESTER_CHOICES,default=1)
     course = models.CharField(max_length=3, choices=COURSE_CHOICES,default="CS")
