@@ -7,3 +7,4 @@ class StudentRegistrationForm(UserCreationForm):
     class Meta:
         model = Student
         fields = ['username', 'email', 'course', 'year_of_study', 'password1', 'password2']
+        

@@ -22,9 +22,11 @@ COURSE_CHOICES = [
 ]
 
 class Student(AbstractUser):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
     year_of_study = models.IntegerField(choices=YEAR_CHOICES,default=1)
     semester = models.IntegerField(choices=SEMESTER_CHOICES,default=1)
     course = models.CharField(max_length=3, choices=COURSE_CHOICES,default="CS")
     
     def __str__(self):
-        return f"{self.username} - {self.get_course_display()}, Year {self.year_of_study}"
+        return f"{self.username} - Year {self.year_of_study}"
