@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!2j08iljda2gqef17es(ld@^+y3w7*3jjxr49)1+)&c8-kg5tu'
+SECRET_KEY = 'django-insecure-g2jzxgjp#m!s5947e5d^rl2wt54qw)x^jp!tu@59#g1tlh*h#&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #local apps
-    "studys_app",
+    #localapps
     "student_registrationapp",
+    "studys_app",
+    #thirdparties
+     "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -124,5 +126,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 AUTH_USER_MODEL = 'student_registrationapp.Student'
