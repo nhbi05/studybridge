@@ -1,0 +1,24 @@
+# Python-specific files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment directories
+venv/
+env/
+
+# Django specific files
+*.log
+*.sqlite3
+
+# IDE/editor config files
+.vscode/
+.idea/
+
+# Ignore environment files (be careful with these, they can contain sensitive info)
+.env
+
+# Ignore Docker-related files (unless you want to track Dockerfile)
+.dockerignore
+Dockerfile
+docker-compose.yml
