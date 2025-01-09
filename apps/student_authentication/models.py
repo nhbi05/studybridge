@@ -1,6 +1,6 @@
 from django.db import models
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 # Create your models here.
 
 YEAR_CHOICES = [
@@ -29,6 +29,9 @@ class Student(AbstractUser):
     year_of_study = models.IntegerField(choices=YEAR_CHOICES,default=1)
     semester = models.IntegerField(choices=SEMESTER_CHOICES,default=1)
     course = models.CharField(max_length=3, choices=COURSE_CHOICES,default="CS")
+
+    groups = models.ManyToManyField(Group, related_name='student_groups', blank=True)
+    user_permissions = models.ManyToManyField(Permission, related_name='student_permissions', blank=True)
     
     def __str__(self):
         return f"{self.username} - Year {self.year_of_study}"
