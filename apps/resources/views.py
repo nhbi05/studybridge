@@ -8,6 +8,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 
+
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def user_info(request):
