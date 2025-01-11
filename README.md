@@ -56,7 +56,7 @@ This open-source initiative invites contributors to join and help enhance the pl
 
 - **React.js**: For building dynamic and interactive user interfaces.
 - **Tailwind CSS**: For styling and responsiveness.
-
+- **Axios**: For making API requests.
 
 ---
 
@@ -66,7 +66,7 @@ This open-source initiative invites contributors to join and help enhance the pl
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nhbi05/studybridge.git
+   git clone https://github.com/<your-username>/studybridge.git
    cd studybridge/backend
    ```
 2. Create and activate a virtual environment:
