@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     # Local apps
     'apps.student_authentication',
     'apps.resources',
+    'apps.study_groups',
     # Third-party apps
     'rest_framework',
 ]
