@@ -74,6 +74,38 @@ def note_list(request):
             serializer.save(uploaded_by=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
+def note_detail(request, pk):
+    """Retrieve, update, or delete a note"""
+    try:
+        note = Note.objects.get(pk=pk)
+    except Note.DoesNotExist:
+        return Response({"error": "Note not found"}, status=status.HTTP_404_NOT_FOUND)
+   
+    # Check permissions
+    if request.method == 'DELETE' and not (request.user == note.uploaded_by or request.user.is_staff):
+        return Response({"error": "You do not have permission to delete this note."}, status=status.HTTP_403_FORBIDDEN)
+    if request.method in ['PUT', 'DELETE'] and not request.user == note.uploaded_by:
+        return Response({"error": "You can only modify your own notes."}, status=status.HTTP_403_FORBIDDEN)
+   
+    if request.method == 'GET':
+        serializer = NoteSerializer(note)
+        return Response(serializer.data)
+   
+    if request.method == 'PUT':
+        serializer = NoteSerializer(note, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+   
+    if request.method == 'DELETE':
+        note.delete()
+        return Response({"message": "Note deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
@@ -136,5 +168,35 @@ def dashboard_view(request):
             "total_tutorials": tutorials.count(),
             "upcoming_tutorials": upcoming_tutorials.count()
         }
+    })
+
+# serializers.py
+from rest_framework import serializers
+from .models import CourseUnit
+
+class CourseUnitSerializer(serializers.ModelSerializer):
+    course_display = serializers.CharField(source='get_course_display', read_only=True)
+    
+    class Meta:
+        model = CourseUnit
+        fields = ['id', 'name', 'course', 'course_display', 'year_of_study', 'semester']
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@user_course_filter
+def course_unit_list(request):
+    """List all course units filtered by user's course, year, and semester"""
+    course_units = CourseUnit.objects.filter(**request.user_filters)
+    
+    # Optional search parameter
+    search_query = request.query_params.get('search')
+    if search_query:
+        course_units = course_units.filter(name__icontains=search_query)
+        
+    serializer = CourseUnitSerializer(course_units, many=True)
+    return Response({
+        'count': course_units.count(),
+        'results': serializer.data
     })
 

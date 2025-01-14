@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from resources.models import CourseUnit, COURSE_CHOICES, YEAR_CHOICES, SEMESTER_CHOICES
+from apps.resources.models import CourseUnit, COURSE_CHOICES, YEAR_CHOICES, SEMESTER_CHOICES
 
 # Create your models here.
 
